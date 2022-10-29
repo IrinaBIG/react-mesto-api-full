@@ -1,6 +1,7 @@
 const BadRequestErr = require('../errors/bad-request-err');
 const ForbiddenErr = require('../errors/forbidden-err');
 const NotFoundErr = require('../errors/not-found-err');
+
 const Card = require('../models/card');
 
 module.exports.getCards = (req, res, next) => {
@@ -13,7 +14,7 @@ module.exports.createCard = (req, res, next) => {
   const { name, link } = req.body;
   const owner = req.user._id;
   Card.create({ name, link, owner })
-    .then((card) => res.send(card)) // { data: card } 2910
+    .then((card) => res.send(card))
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new BadRequestErr('Переданы некорректные данные при создании карточки.'));
@@ -52,11 +53,12 @@ module.exports.likeCard = (req, res, next) => {
     { $addToSet: { likes: req.user._id } }, // добавить _id в массив, если его там нет
     { new: true },
   )
+    .populate('likes')
     .then((card) => {
       if (!card) {
         throw new NotFoundErr('Передан несуществующий _id карточки.');
       } else {
-        res.send({ data: card });
+        res.send(card);
       }
     })
     .catch((err) => {
@@ -74,11 +76,12 @@ module.exports.dislikeCard = (req, res, next) => {
     { $pull: { likes: req.user._id } }, // убрать _id из массива
     { new: true },
   )
+    // .populate('likes')
     .then((card) => {
       if (!card) {
         throw new NotFoundErr('Передан несуществующий _id карточки для удаления.');
       } else {
-        res.send({ data: card });
+        res.send(card);
       }
     })
     .catch((err) => {

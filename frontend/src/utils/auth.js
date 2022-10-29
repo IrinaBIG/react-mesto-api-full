@@ -20,17 +20,6 @@ export const register = (password, email) => {
         .then((res) => checkResponse(res));
 };
 
-export const authorize = (password, email) => {
-    return fetch(`${BASE_URL}/signin`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ password, email })
-    })
-    .then((res) => checkResponse(res))
-};
-
 export const checkToken = (token) => {
     return fetch(`${BASE_URL}/users/me`, {
         method: 'GET',
@@ -42,3 +31,14 @@ export const checkToken = (token) => {
     })
     .then((res) => checkResponse(res));
 }
+
+export const authorize = (password, email) => {
+    return fetch(`${BASE_URL}/signin`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ password, email })
+    })
+    .then((res) => checkResponse(res))
+};

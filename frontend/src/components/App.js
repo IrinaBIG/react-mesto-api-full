@@ -96,11 +96,15 @@ function App() {
   }
 
   function handleCardLike(card) {
+    console.dir(card);
+
     // Снова проверяем, есть ли уже лайк на этой карточке
     const isLiked = card.likes.some(item => item._id === currentUser._id);
+    console.log(isLiked);
     // Отправляем запрос в API и получаем обновлённые данные карточки
     api.toggleLike(card._id, isLiked)
       .then((newCard) => {
+        console.dir(newCard);
         setCards((state) => state.map((c) => (c._id === card._id ? newCard : c)));
       })
       .catch((err) => {
@@ -167,8 +171,9 @@ function App() {
     if (password, email) {
       auth.register(password, email)
         .then((res) => {
-          console.log(res);
-          if (res.data) {
+          // console.log(res);
+          if (res) {
+            // console.log(res); //res.data
             setIfRegOk(true);
             history.push('/sign-in');
           }
@@ -182,7 +187,7 @@ function App() {
         })
     }
   }
-  
+
   function handleLogin(password, email) {
     if (!password || !email) {
       return;
@@ -191,7 +196,6 @@ function App() {
       .then((data) => {
         // console.log(data)
         if (data.token) {
-          // console.log(data.token);
           localStorage.setItem('token', data.token);
           setLoggedIn(true);
           history.push('/main');
@@ -199,7 +203,6 @@ function App() {
       })
       .catch(err => console.log(err));
   }
-
 
   useEffect(() => {
     Promise.all([api.getUser(), api.getCards()])

@@ -60,7 +60,6 @@ class Api {
   }
 
   addCard(data) {
-
     return fetch(`${this._url}/cards`, {
       headers: this._enterBearerToken(this._headers),
       method: 'POST',

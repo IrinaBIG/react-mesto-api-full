@@ -99,7 +99,7 @@ module.exports.updateUserProfileByID = (req, res, next) => {
       if (!user) {
         throw new NotFoundErr('Пользователь с указанным _id не найден.');
       } else {
-        res.send({ data: user });
+        res.send(user);
       }
     })
     .catch((err) => {
@@ -118,7 +118,7 @@ module.exports.updateUserAvatarByID = (req, res, next) => {
       if (!user) {
         throw new NotFoundErr('Пользователь с указанным _id не найден.');
       } else {
-        res.send({ data: user });
+        res.send(user);
       }
     })
     .catch((err) => {
