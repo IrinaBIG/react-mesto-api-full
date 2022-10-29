@@ -1,0 +1,25 @@
+.profile__item {
+    grid-area: item;
+    display: flex;
+    align-items: flex-end;
+    list-style: none;
+}
+
+@media (max-width: 950px) {
+    .profile__item {
+        margin: 0;
+    }
+}
+
+@media (max-width: 525px) {
+    .profile__item {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 320px) {
+    .profile__item {
+        max-width: 282px;
+        margin-top: 22px;
+    }
+}

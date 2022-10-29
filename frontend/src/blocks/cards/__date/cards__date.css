@@ -1,0 +1,18 @@
+.cards__date {
+    display: flex;
+    justify-content: space-between;
+    padding: 23.81px 21px 28.5px;
+}
+
+@media (max-width: 600px) {
+    .cards__date {
+        padding: 15px 15px;
+    }
+}
+
+@media (max-width: 320px) {
+    .cards__date {
+        padding: 23.31px 15px 28.3px;
+        width: 246px;
+    }
+}

@@ -1,0 +1,52 @@
+.start-page__input {
+    width: 100%;
+    width: 358px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    border: 0;
+    height: 38px;
+    background: #000;
+    margin-bottom: 12px;
+    padding-left: 0;
+    border-bottom: 2px solid rgba(204, 204, 204, 1);
+    color: #FFF;
+}
+
+.start-page__input::placeholder {
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #CCC;
+}
+
+.start-page__input::-webkit-input-placeholder {
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #CCC;
+}
+
+.start-page__item::-moz-placeholder {
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #CCC;
+}
+
+.start-page__input::-ms-input-placeholder {
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #CCC;
+}

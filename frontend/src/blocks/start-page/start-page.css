@@ -1,0 +1,6 @@
+.start-page {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: end; */
+}

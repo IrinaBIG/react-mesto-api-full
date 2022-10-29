@@ -1,0 +1,11 @@
+.header__user-data {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;  
+    color: #FFFFFF;
+    position: absolute;
+    right: 80px;
+    top: 52px;
+}

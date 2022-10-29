@@ -1,0 +1,27 @@
+.header {
+  max-width: 880px;
+  padding-top: 45px;
+  margin: 0 auto 45px;
+  border-bottom: 1px solid rgba(84, 84, 84, .7);
+  display: flex;
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    margin: 0 50px 36px;
+  }
+}
+
+@media (max-width: 420px) {
+  .header {
+    margin: 0 19px 36px;
+  }
+}
+
+@media (max-width: 320px) {
+  .header {
+    padding-top: 28px;
+    margin: 0 0 40px;
+  }
+}

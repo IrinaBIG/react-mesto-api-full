@@ -1,0 +1,39 @@
+.profile__name {
+    width: 100%;
+    max-width: 294px;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 42px;
+    line-height: 50px;
+    color: #FFF;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-rendering: auto;
+}
+
+@media (max-width: 800px) {
+    .profile__name {
+        max-width: 245px;
+        font-size: 35px;
+        line-height: 42px;
+        margin-bottom: 7px;
+    }
+}
+
+@media (max-width: 420px) {
+    .profile__name {
+        max-width: 258px;
+        font-size: 27px;
+        line-height: 33px;
+        margin-bottom: 4px;
+        margin-left: 26px;
+    }
+}

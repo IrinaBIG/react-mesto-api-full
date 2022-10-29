@@ -1,0 +1,21 @@
+.start-page__button {
+    width: 100%;
+    max-width: 358px;
+    height: 50px;
+    background: #FFF;
+    margin-top: 204px;
+    border-radius: 2px;
+    color: #000;
+    border: 1px solid #000;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+}
+
+
+.start-page__button:hover {
+    opacity: .8;
+}

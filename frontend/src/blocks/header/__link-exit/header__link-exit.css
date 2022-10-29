@@ -1,0 +1,18 @@
+.header__link-exit {
+    color: #A9A9A9;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-decoration: none;
+    background-color: black;
+    cursor: pointer;
+}
+
+.header__link-exit:hover {
+    opacity: .7;
+}

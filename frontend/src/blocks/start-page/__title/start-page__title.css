@@ -1,0 +1,12 @@
+.start-page__title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    margin: 0 auto 37px;
+    /* border: solid 1px red; */
+    width: 358px;
+    max-height: 29px;
+    text-align: center;
+}

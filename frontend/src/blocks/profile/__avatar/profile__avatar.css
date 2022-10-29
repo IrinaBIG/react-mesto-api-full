@@ -1,0 +1,29 @@
+.profile__avatar {
+    grid-area: avatar;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    /* background: url(../../../images/Avatar.svg) no-repeat center; */
+    background: url("#") no-repeat center;
+    object-fit: cover;
+    position: relative;
+}
+
+.profile__avatar:hover::before {
+    content: "";
+    opacity: 0.8;
+    background: rgba(0, 0, 0, 0.8);
+    width: 120px;
+    height: 120px;
+    position: absolute;
+}
+
+.profile__avatar:hover::after {
+    content: "";
+    background: url(../../../images/pencil.svg);
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    top: 47px;
+    left: 47px;
+}

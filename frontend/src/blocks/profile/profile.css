@@ -1,0 +1,43 @@
+.profile {
+    max-width: 880px;
+    /* height: 120px; */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 120px 336px 1fr;
+    grid-template-areas:
+        "avatar item button"
+        "avatar activity button";
+    column-gap: 29px;
+}
+
+@media (max-width: 1024px) {
+    .profile {
+        margin: 0 50px;
+    }
+}
+
+@media (max-width: 770px) {
+    .profile {
+        margin: 0 70px;
+        grid-template-columns: 120px 1fr;
+        grid-template-areas:
+            "avatar item"
+            "avatar activity"
+            "button button";
+        justify-items: stretch;
+    }
+}
+
+@media (max-width: 580px) {
+    .profile {
+        margin: 0 19px;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        grid-template-areas:
+            "avatar"
+            "item"
+            "activity"
+            "button";
+        row-gap: 4px;
+    }
+}
