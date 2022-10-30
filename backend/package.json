@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/IrinaBIG/express-mesto-gha/issues"
   },
-  "homepage": ".",
+  
   "devDependencies": {
     "cross-env": "^7.0.3",
     "eslint": "^8.25.0",
