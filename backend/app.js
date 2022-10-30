@@ -19,6 +19,11 @@ app.use(bodyParser.urlencoded({ extended: true })); // для приёма ве�
 mongoose.connect('mongodb://localhost:27017/mestodb');
 
 app.use(requestLogger); // подключаем логгер запросов
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 app.post('/signup', celebrateSignUp, createUser);
 app.post('/signin', celebrateSignIn, login);
 
