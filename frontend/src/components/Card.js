@@ -6,7 +6,7 @@ function Card({ name, link, likes, onCardClicks, card, onCardLike, onCardDeleteP
     const currentUser = React.useContext(CurrentUserContext);
     // Определяем, являемся ли мы владельцем текущей карточки
     // console.dir(currentUser._id);
-    const isOwn = card.owner === currentUser._id; 
+    const isOwn = card.owner._id === currentUser._id; 
     
 
    // Создаём переменную, которую после зададим в `className` для кнопки удаления

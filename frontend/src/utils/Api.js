@@ -26,7 +26,6 @@ class Api {
 
   _checkResponse = (res) => {
     if (res.ok) {
-      // console.dir(res)
       return res.json();
     }
     return res.json()

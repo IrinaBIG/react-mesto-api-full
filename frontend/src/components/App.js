@@ -167,23 +167,6 @@ function App() {
     setIsTooltipPopupOpen(false)
   }
 
-  function handleRegister(password, email) {
-
-    auth.register(password, email)
-      .then((res) => {
-        console.log(res.user);
-        setIfRegOk(true);
-        history.push('/signin');
-      })
-      .catch((err) => {
-        setIfRegOk(false);
-        console.log(err);
-      })
-      .finally(() => {
-        handleTooltipPlaceClick();
-      })
-  }
-
   function handleLogin(password, email) {
     if (!password || !email) {
       return;
@@ -197,6 +180,22 @@ function App() {
         }
       })
       .catch(err => console.log(err));
+  }
+
+  function handleRegister(password, email) {
+    auth.register(password, email)
+      .then((res) => {
+        console.log(res.user);
+        setIfRegOk(true);
+        history.push('/signin');
+      })
+      .catch((err) => {
+        setIfRegOk(false);
+        console.log(err);
+      })
+      .finally(() => {
+        handleTooltipPlaceClick();
+      })
   }
 
   useEffect(() => {
