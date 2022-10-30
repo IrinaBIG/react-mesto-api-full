@@ -1,5 +1,7 @@
 # react-mesto-api-full
 Ссылка на проектную работу
+http://irinabig.students.nomoredomains.icu
+
 
 в GitHube https://github.com/IrinaBIG/express-mesto-gha.git
 
