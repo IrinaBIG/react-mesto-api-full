@@ -130,7 +130,6 @@ function App() {
       .then((profile) => {
         setCurrentUser(profile);
         closeAllPopups();
-
       })
       .catch((err) => {
         console.log(err);
@@ -198,8 +197,6 @@ function App() {
   useEffect(() => {
     Promise.all([api.getUser(), api.getCards()])
       .then(([profile, {data: cards}]) => {
-        // console.log(profile);
-        // console.log({data:cards})
         setCurrentUser(profile);
         setCards(cards);
       })
