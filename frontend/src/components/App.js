@@ -182,7 +182,7 @@ function App() {
   function handleRegister(password, email) {
     auth.register(password, email)
       .then((res) => {
-        console.log(res.user);
+        console.log(res);
         setIfRegOk(true);
         history.push('/signin');
       })
