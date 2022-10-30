@@ -1,5 +1,6 @@
+import { BASE_URL } from "./constants";
 // export const BASE_URL = 'https://auth.nomoreparties.co';
-export const BASE_URL = 'http://localhost:5555';
+// export const BASE_URL = 'http://localhost:5555';
 
 const checkResponse = (res) => {
     if (res) {

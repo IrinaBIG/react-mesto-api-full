@@ -76,7 +76,7 @@ module.exports.dislikeCard = (req, res, next) => {
     { $pull: { likes: req.user._id } }, // убрать _id из массива
     { new: true },
   )
-    // .populate('likes')
+    .populate('likes')
     .then((card) => {
       if (!card) {
         throw new NotFoundErr('Передан несуществующий _id карточки для удаления.');

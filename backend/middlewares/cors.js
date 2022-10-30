@@ -1,6 +1,7 @@
 // Массив доменов, с которых разрешены кросс-доменные запросы
 const allowedCors = [
   'http://localhost:7777',
+  'http://irinabig.students.nomoredomains.icu',
 ];
 
 module.exports = (req, res, next) => {

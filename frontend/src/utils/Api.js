@@ -1,3 +1,5 @@
+import { BASE_URL } from "./constants";
+
 class Api {
   constructor(url, token) {
     this._url = url;
@@ -97,7 +99,7 @@ class Api {
   }
 }
 
-const api = new Api('http://localhost:5555');
+const api = new Api(BASE_URL);
 // const api = new Api('https://mesto.nomoreparties.co/v1/cohort-45');
 
 export default api;

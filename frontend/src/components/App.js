@@ -166,7 +166,6 @@ function App() {
     setSelectedCard({ isOpen: false, card: {} })
     setIsTooltipPopupOpen(false)
   }
-  console.log(process.env.NODE_ENV);
 
   function handleRegister(password, email) {
 
