@@ -101,7 +101,7 @@ function App() {
     // Отправляем запрос в API и получаем обновлённые данные карточки
     api.toggleLike(card._id, isLiked)
       .then((newCard) => {
-        console.dir(newCard);
+        // console.dir(newCard);
         setCards((state) => state.map((c) => (c._id === card._id ? newCard : c)));
       })
       .catch((err) => {

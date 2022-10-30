@@ -1,6 +1,8 @@
 // Массив доменов, с которых разрешены кросс-доменные запросы
 const allowedCors = [
   'https://irinabig.students.nomoredomains.icu',
+  'https://api.irinabig.students.nomoredomains.icu',
+  'http://api.irinabig.students.nomoredomains.icu',
   'http://localhost:7777',
   'http://irinabig.students.nomoredomains.icu',
 ];
