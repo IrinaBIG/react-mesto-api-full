@@ -8,7 +8,7 @@ function Header({ email }) {
 
     function onSignOut() {
         localStorage.removeItem('token');
-        history.push('/sign-in');
+        history.push('/signin');
     }
 
     return (
@@ -16,14 +16,14 @@ function Header({ email }) {
             <img className="logo" src={headerLogo} alt="логотип Mesto" />
             <Switch>
 
-                <Route path="/sign-in">
-                    <Link to="/sign-up" className="header__link">
+                <Route path="/signin">
+                    <Link to="/signup" className="header__link">
                         Регистрация
                     </Link>
                 </Route>
 
-                <Route path="/sign-up">
-                    <Link to="/sign-in" className="header__link">
+                <Route path="/signup">
+                    <Link to="/signin" className="header__link">
                         Войти
                     </Link>
                 </Route>

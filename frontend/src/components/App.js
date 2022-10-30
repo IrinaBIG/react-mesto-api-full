@@ -166,26 +166,23 @@ function App() {
     setSelectedCard({ isOpen: false, card: {} })
     setIsTooltipPopupOpen(false)
   }
+  console.log(process.env.NODE_ENV);
 
   function handleRegister(password, email) {
-    if (password, email) {
-      auth.register(password, email)
-        .then((res) => {
-          // console.log(res);
-          if (res) {
-            // console.log(res); //res.data
-            setIfRegOk(true);
-            history.push('/sign-in');
-          }
-        })
-        .catch((err) => {
-          setIfRegOk(false);
-          console.log(err);
-        })
-        .finally(() => {
-          handleTooltipPlaceClick();
-        })
-    }
+
+    auth.register(password, email)
+      .then((res) => {
+        console.log(res.user);
+        setIfRegOk(true);
+        history.push('/signin');
+      })
+      .catch((err) => {
+        setIfRegOk(false);
+        console.log(err);
+      })
+      .finally(() => {
+        handleTooltipPlaceClick();
+      })
   }
 
   function handleLogin(password, email) {
@@ -194,7 +191,6 @@ function App() {
     }
     auth.authorize(password, email)
       .then((data) => {
-        // console.log(data)
         if (data.token) {
           localStorage.setItem('token', data.token);
           setLoggedIn(true);
@@ -224,8 +220,6 @@ function App() {
       auth.checkToken(jwt)
         .then((res) => {
           if (res) {
-            // console.dir(res)
-            // const email = (res.data.email); 2910
             const email = (res.email);
             setEmail(email);
             setLoggedIn(true);
@@ -259,18 +253,18 @@ function App() {
               cards={cards}
             />
 
-            <Route path="/sign-up">
+            <Route path="/signup">
               <Register
                 handleRegister={handleRegister}
               />
             </Route>
 
-            <Route path="/sign-in">
+            <Route path="/signin">
               <Login handleLogin={handleLogin} />
             </Route>
 
             <Route exact path="/">
-              {loggedIn ? <Redirect to="/main" /> : <Redirect to="/sign-in" />}
+              {loggedIn ? <Redirect to="/main" /> : <Redirect to="/signin" />}
             </Route>
 
           </Switch>

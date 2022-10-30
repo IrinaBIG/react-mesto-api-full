@@ -21,3 +21,5 @@ export const registerStartingValues = {
     errValues: { emailInput: '', passwordInput: '' },
     errStates: { emailInput: false, passwordInput: false }
 }
+
+// export const BASE_URL = process.env.NODE_ENV === 'development' ? 'http://localhost:5555' : ''; //htttps back
