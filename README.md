@@ -1,6 +1,8 @@
 # react-mesto-api-full
 Ссылка на проектную работу
-http://irinabig.students.nomoredomains.icu
+IP 158.160.16.203
+Frontend https://irinabig.students.nomoredomains.icu
+Backend https://api.irinabig.students.nomoredomains.icu
 
 
 в GitHube https://github.com/IrinaBIG/express-mesto-gha.git
