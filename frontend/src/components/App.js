@@ -171,8 +171,8 @@ function App() {
       .then((data) => {
         if (data.token) {
           localStorage.setItem('token', data.token);
-          setLoggedIn(true);
           history.push('/main');
+          setLoggedIn(true);
         }
       })
       .catch(err => console.log(err));
@@ -182,8 +182,8 @@ function App() {
     auth.register(password, email)
       .then((res) => {
         console.log(res);
-        setIfRegOk(true);
         history.push('/signin');
+        setIfRegOk(true);
       })
       .catch((err) => {
         setIfRegOk(false);
@@ -203,7 +203,7 @@ function App() {
       .catch((err) => {
         console.log(err);
       })
-  }, []);
+  }, [loggedIn]);
 
   useEffect(() => {
     // если у пользователя есть токен в localStorage, 
