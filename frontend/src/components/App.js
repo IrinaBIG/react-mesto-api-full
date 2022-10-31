@@ -180,17 +180,21 @@ function App() {
 
   function handleRegister(password, email) {
     auth.register(password, email)
-      .then((res) => {
-        console.log(res);
-        history.push('/signin');
-        setIfRegOk(true);
+      .then((response) => {
+        console.log(response.name)
+        if (response.name) {
+          setIfRegOk(true);
+          handleTooltipPlaceClick();
+          history.push('/signin');
+        } else {
+          setIfRegOk(false);
+          handleTooltipPlaceClick();
+        }
       })
       .catch((err) => {
         setIfRegOk(false);
-        console.log(err);
-      })
-      .finally(() => {
         handleTooltipPlaceClick();
+        console.log(err);
       })
   }
 
