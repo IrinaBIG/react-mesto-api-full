@@ -45,6 +45,7 @@ app.use(handlerErrors); // централизованнный обработчи
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
   console.log(NODE_ENV);
+  // console.log(process.env.NODE_ENV);
   console.log(`App listening on port ${PORT}`);
 });
 
