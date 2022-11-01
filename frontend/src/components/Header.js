@@ -7,8 +7,8 @@ function Header({ email }) {
     const history = useHistory();
 
     function onSignOut() {
-        localStorage.removeItem('token');
         history.push('/signin');
+        localStorage.removeItem('token');
     }
 
     return (
@@ -28,7 +28,7 @@ function Header({ email }) {
                     </Link>
                 </Route>
 
-                <Route path="/">
+                <Route path="/main">
                     <div className="header__user-data">
                         {email}
                     </div>

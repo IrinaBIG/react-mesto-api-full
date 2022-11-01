@@ -163,52 +163,6 @@ function App() {
     setIsTooltipPopupOpen(false)
   }
 
-  function handleLogin(password, email) {
-    if (!password || !email) {
-      return;
-    }
-    auth.authorize(password, email)
-      .then((data) => {
-        if (data.token) {
-          localStorage.setItem('token', data.token);
-          history.push('/main');
-          setLoggedIn(true);
-        }
-      })
-      .catch(err => console.log(err));
-  }
-
-  function handleRegister(password, email) {
-    auth.register(password, email)
-      .then((response) => {
-        console.log(response.name)
-        if (response.name) {
-          setIfRegOk(true);
-          handleTooltipPlaceClick();
-          history.push('/signin');
-        } else {
-          setIfRegOk(false);
-          handleTooltipPlaceClick();
-        }
-      })
-      .catch((err) => {
-        setIfRegOk(false);
-        handleTooltipPlaceClick();
-        console.log(err);
-      })
-  }
-
-  useEffect(() => {
-    Promise.all([api.getUser(), api.getCards()])
-      .then(([profile, {data: cards}]) => {
-        setCurrentUser(profile);
-        setCards(cards);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-  }, [loggedIn]);
-
   useEffect(() => {
     // если у пользователя есть токен в localStorage, 
     // эта функция проверит, действующий он или нет
@@ -228,6 +182,54 @@ function App() {
     }
   }, [history]);
 
+  function handleLogin(password, email) {
+    if (!password || !email) {
+      return;
+    }
+    auth.authorize(password, email)
+      .then((data) => {
+        setEmail(email);
+        if (data.token) {
+          localStorage.setItem('token', data.token);
+          history.push('/main');
+          setLoggedIn(true);
+        }
+      })
+      .catch(err => console.log(err));
+  }
+
+  function handleRegister(password, email) {
+    auth.register(password, email)
+      .then((response) => {
+        if (response.name) {
+          setIfRegOk(true);
+          handleTooltipPlaceClick();
+          history.push('/signin');
+        } else {
+          setIfRegOk(false);
+          handleTooltipPlaceClick();
+        }
+      })
+      .catch((err) => {
+        setIfRegOk(false);
+        handleTooltipPlaceClick();
+        console.log(err);
+      })
+  }
+
+  useEffect(() => {
+    Promise.all([api.getUser(), api.getCards(), email])
+      .then(([profile, {data: cards}]) => {
+        setCurrentUser(profile);
+        setCards(cards);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }, [email, loggedIn]);
+
+
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="body">
@@ -241,6 +243,7 @@ function App() {
               exact path="/main"
               loggedIn={loggedIn}
               component={Main}
+              email={email}
               onEditAvatar={handleEditAvatarClick}
               onAddPlace={handleAddPlaceClick}
               onEditProfile={handleEditProfileClick}
