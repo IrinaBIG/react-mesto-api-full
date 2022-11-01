@@ -1,6 +1,6 @@
 # react-mesto-api-full
 Ссылка на проектную работу
-IP 158.160.16.203
+IP 84.201.139.126
 Frontend <https://irinabig.students.nomoredomains.icu>
 Backend https://api.irinabig.students.nomoredomains.icu
 
