@@ -193,6 +193,9 @@ function App() {
           localStorage.setItem('token', data.token);
           history.push('/main');
           setLoggedIn(true);
+          return data;
+        } else {
+          history.push('/signin');
         }
       })
       .catch(err => console.log(err));
@@ -225,8 +228,9 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
+        history.push('/signin');
       })
-  }, [email, loggedIn]);
+  }, [email, history, loggedIn]);
 
 
 
