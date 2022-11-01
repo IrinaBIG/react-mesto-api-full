@@ -4,6 +4,7 @@ const allowedCors = [
   'https://api.irinabig.students.nomoredomains.icu',
   'http://api.irinabig.students.nomoredomains.icu',
   'http://localhost:7777',
+  'http://localhost:3000',
   'http://irinabig.students.nomoredomains.icu',
 ];
 
