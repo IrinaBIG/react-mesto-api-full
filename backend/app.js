@@ -1,4 +1,6 @@
 require('dotenv').config();
+
+const { NODE_ENV } = process.env;
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -10,6 +12,7 @@ const handlerErrors = require('./middlewares/handlerErrors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const cors = require('./middlewares/cors');
 
+// console.log(process.env.NODE_ENV);
 const { PORT = 3000 } = process.env;
 const app = express();
 app.use(cors);
@@ -41,6 +44,7 @@ app.use(handlerErrors); // централизованнный обработчи
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
+  console.log(NODE_ENV);
   console.log(`App listening on port ${PORT}`);
 });
 

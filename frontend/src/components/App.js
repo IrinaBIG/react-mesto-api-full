@@ -123,6 +123,7 @@ function App() {
         setIsLoading(false);
       })
   }
+  // console.log(process.env.NODE_ENV);
 
   function handleUpdateAvatar(data) {
     setIsLoading(true);

@@ -5,9 +5,9 @@ export const editProfileStartingValues = {
 }
 
 export const addPlaceStartingValues = {
-    inputValues: { newPlace: '', newPlace: '' },
-    errValues: { newPlace: '', newPlace: '' },
-    errStates: { newPlace: false, newPlace: false }
+    inputValues: { newPlace: '', linkPlace: '' },
+    errValues: { newPlace: '', linkPlace: '' },
+    errStates: { newPlace: false, linkPlace: false }
 }
 
 export const editAvatarStartingValues = {
