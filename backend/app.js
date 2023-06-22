@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const { NODE_ENV } = process.env;
+// const { NODE_ENV } = process.env;
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -43,8 +43,7 @@ app.use(errors()); // обработчик ошибок celebrate
 app.use(handlerErrors); // централизованнный обработчик
 
 app.listen(PORT, () => {
-  // eslint-disable-next-line no-console
-  console.log(NODE_ENV);
+  // console.log(NODE_ENV);
   // console.log(process.env.NODE_ENV);
   console.log(`App listening on port ${PORT}`);
 });

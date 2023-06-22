@@ -1,15 +1,17 @@
 # react-mesto-api-full
+
 Ссылка на проектную работу
 IP 84.201.139.126
 Frontend <https://irinabig.students.nomoredomains.icu>
-Backend https://api.irinabig.students.nomoredomains.icu
+Backend <https://api.irinabig.students.nomoredomains.icu>
 
-в GitHube https://github.com/IrinaBIG/express-mesto-gha.git
+в GitHube <https://github.com/IrinaBIG/express-mesto-gha.git>
 
 ПР 15. Объединение фронта и бэка и размещение проекта на сервере (яндекс облако).
 Склейка на локальном сервере. Создание домена. размещение на сервере.
 
 Порядок действий:
+
  1. Реализация логирования запросов и ошибок;
  2. Объединение фронтенд и бэкенд части приложения;
  3. Создание облачного сервера и разворачивание API;
@@ -18,6 +20,3 @@ Backend https://api.irinabig.students.nomoredomains.icu
  6. Создание домена и прикрепление его к серверу;
  7. Выпуск сертификатов и их подключение;
  8. Краш-тест сервера.
-
-
-Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
